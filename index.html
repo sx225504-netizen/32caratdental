@@ -593,8 +593,10 @@
             <h3 class="form-title">Book Your Appointment</h3>
             <p class="form-subtitle">Fill in your details and we'll get back to you shortly.</p>
 
-            <form id="appointmentForm" name="appointment" method="POST" data-netlify="true">
+            <form id="appointmentForm" name="appointment" method="POST" data-netlify="true"
+              netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="appointment">
+              <input type="hidden" name="bot-field">
               <div class="form-row">
                 <div class="form-group">
                   <label for="patientName">Full Name *</label>
@@ -613,7 +615,7 @@
 
               <div class="form-group">
                 <label for="treatmentType">Treatment Interest</label>
-                <select id="treatmentType">
+                <select id="treatmentType" name="treatment">
                   <option value="">Select a treatment (optional)</option>
                   <option value="general">General Checkup & Cleaning</option>
                   <option value="bleeding-gums">Bleeding Gums Treatment</option>
@@ -630,7 +632,7 @@
 
               <div class="form-group">
                 <label for="patientMessage">Message (optional)</label>
-                <textarea id="patientMessage" placeholder="Describe your concern or preferred timing..."></textarea>
+                <textarea id="patientMessage" name="message" placeholder="Describe your concern or preferred timing..."></textarea>
               </div>
 
               <button type="submit" class="form-submit-btn" id="formSubmitBtn">
@@ -714,11 +716,19 @@
     </div>
   </footer>
 
+ <form name="appointment" netlify hidden>
+<input type="text" name="name">
+<input type="tel" name="phone">
+<input type="email" name="email">
+<input type="text" name="treatment">
+<textarea name="message"></textarea>
+</form>
   <script src="index.js"></script>
 </body>
 
 
 </html>
+
 
 
 
