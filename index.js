@@ -179,30 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         form.addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            // Basic validation
-            const name = document.getElementById('patientName').value.trim();
-            const phone = document.getElementById('patientPhone').value.trim();
+    // Basic validation
+    const name = document.getElementById('patientName').value.trim();
+    const phone = document.getElementById('patientPhone').value.trim();
 
-            if (!name || !phone) {
-                alert('Please fill in your name and phone number.');
-                return;
-            }
+    if (!name || !phone) {
+        e.preventDefault();
+        alert('Please fill in your name and phone number.');
+        return;
+    }
 
-            // Show success state
-            formContainer.style.display = 'none';
-            formSuccess.classList.add('active');
-
-            // Reset form data
-            form.reset();
-
-            // Restore form after 8 seconds
-            setTimeout(() => {
-                formSuccess.classList.remove('active');
-                formContainer.style.display = 'block';
-            }, 8000);
-        });
+});
     }
 
     // ===========================
@@ -251,3 +239,4 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
 });
+
