@@ -593,21 +593,22 @@
             <h3 class="form-title">Book Your Appointment</h3>
             <p class="form-subtitle">Fill in your details and we'll get back to you shortly.</p>
 
-            <form id="appointmentForm">
+            <form id="appointmentForm" name="appointment" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="appointment">
               <div class="form-row">
                 <div class="form-group">
                   <label for="patientName">Full Name *</label>
-                  <input type="text" id="patientName" placeholder="Your name" required>
+                  <input type="text" id="patientName" name="name" placeholder="Your name" required>
                 </div>
                 <div class="form-group">
                   <label for="patientPhone">Phone Number *</label>
-                  <input type="tel" id="patientPhone" placeholder="+91 XXXXX XXXXX" required>
+                  <input type="tel" id="patientPhone" name="phone" placeholder="+91 XXXXX XXXXX" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="patientEmail">Email Address</label>
-                <input type="email" id="patientEmail" placeholder="your@email.com">
+                <input type="email" id="patientEmail" name="email" placeholder="your@email.com">
               </div>
 
               <div class="form-group">
@@ -718,6 +719,7 @@
 
 
 </html>
+
 
 
 
